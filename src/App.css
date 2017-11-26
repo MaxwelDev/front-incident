@@ -1,0 +1,13 @@
+body {
+  background-color: #000 !important;
+}
+
+.App {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.App table {
+  background-color: #000;
+  color: #fff
+}
