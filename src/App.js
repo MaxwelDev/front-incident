@@ -13,7 +13,10 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.getList()
+    setInterval(() => {
+      this.getList();
+    }, 60000);
+   
   }
 
   getList = () => {
