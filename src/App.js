@@ -13,14 +13,12 @@ class App extends Component {
   }
 
   componentWillMount() {
-    setInterval(() => {
-      this.getList();
-    }, 60000);
-   
+    this.getList()
   }
 
   getList = () => {
-    const URL = "https://responsibleincident.herokuapp.com/im-day"
+    //const URL = "https://responsibleincident.herokuapp.com/im-day"
+    const URL = "http://localhost:8080/im-day"
     const self = this
     return axios.get(URL).then(res => {
       self.setState({
@@ -55,7 +53,7 @@ class App extends Component {
               <tr>
                 <td>{`${valid[item.aliasDate]  ?  valid[item.aliasDate] : dayTranslated[item.date.dayOfWeek]} (${item.date
                   .dayOfMonth}/${item.date.monthValue})`}</td>
-                <td>{item.name === "Phone" ? <img width="20" src={phone}/> : item.name}</td>
+                <td>{item.name === "Phone" ? <img width="20" src={phone} alt=""/> : item.name}</td>
               </tr>
             ))}
           </tbody>
